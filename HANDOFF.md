@@ -36,7 +36,16 @@
    - 长文件 Write 易产生乱码损坏——尽量精简代码文件、写完立即 py_compile 验证
 3. 后台爬虫数据源只允许 quotes.toscrape.com / books.toscrape.com（delay ≥0.3s）
 
-## 当前进度（2026-11-04 01:30）
+## 当前进度（2026-11-04 01:13 更新）
+
+- GitHub 仓库已创建并推送：**https://github.com/wdfortest/linux-python-fullstack-tutorial**（public，2 个 commit 已在线）
+- .mimosa 本地数据已从 git 移除并 gitignore
+- 根 README CI 徽章已换真实 workflow 状态徽章
+- docs/03 爬虫章节 8 篇文档已全部落盘（Agent 在做最后的 scrapy 实测收尾，01:09 仍有活动）
+- docs/03/README.md 索引已写
+- 首次 commit 0a7e1b5 + chore d6a9455 已推送
+
+
 
 ### 已完成 ✅
 

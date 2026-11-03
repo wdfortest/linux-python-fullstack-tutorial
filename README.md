@@ -11,7 +11,7 @@
 ![pandas](https://img.shields.io/badge/pandas-2.3-150458?logo=pandas&logoColor=white)
 ![ECharts](https://img.shields.io/badge/ECharts-6.1-AA344D?logo=apacheecharts&logoColor=white)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04%20%7C%2026.04%20LTS-E95420?logo=ubuntu&logoColor=white)
-![CI](https://img.shields.io/badge/CI-GitHub_Actions-2088FF?logo=githubactions&logoColor=white)
+[![CI](https://github.com/wdfortest/linux-python-fullstack-tutorial/actions/workflows/ci.yml/badge.svg)](https://github.com/wdfortest/linux-python-fullstack-tutorial/actions/workflows/ci.yml)
 
 </div>
 

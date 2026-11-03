@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>异步数据与 API 对接演示</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@6.1.0/dist/echarts.min.js"></script>
+  <script>
+    if (typeof echarts === "undefined") {
+      document.write('<script src="https://registry.npmmirror.com/echarts/6.1.0/files/dist/echarts.min.js"><\/script>');
+    }
+  </script>
+  <style>
+    body { font-family: "PingFang SC", sans-serif; max-width: 900px; margin: 0 auto; padding: 24px; }
+    .chart { width: 100%; height: 320px; border: 1px solid #e5e7eb; border-radius: 8px; }
+    button { padding: 6px 16px; margin-right: 8px; }
+    #log { font-family: Menlo, monospace; font-size: 12px; background: #0f172a; color: #93c5fd; padding: 12px; border-radius: 8px; height: 110px; overflow-y: auto; }
+    p { color: #6b7280; }
+  </style>
+</head>
+<body>
+  <h1>异步数据与 API 对接</h1>
+  <p>本页不依赖后端：用 setTimeout 模拟接口延迟/失败，演示 loading、错误兜底、定时刷新的完整流程。
+     对接真实 FastAPI 时，把 fakeFetch 换成 fetch("/api/stats/ratings") 即可（见文档 03 篇）。</p>
+
+  <div>
+    <button id="btn-ok">模拟成功请求</button>
+    <button id="btn-fail">模拟失败请求</button>
+    <button id="btn-poll">开启/停止 3 秒轮询</button>
+  </div>
+
+  <div id="bar" class="chart" style="margin-top:16px;"></div>
+  <h3>事件日志</h3>
+  <div id="log">等待操作…</div>
+
+  <script>
+    const chart = echarts.init(document.getElementById("bar"));
+    const logEl = document.getElementById("log");
+    let pollTimer = null;
+
+    function log(msg) {
+      logEl.innerHTML = `[${new Date().toLocaleTimeString("zh-CN")}] ${msg}<br>` + logEl.innerHTML;
+    }
+
+    /** 模拟接口：ok=false 时抛错；数据带随机波动，模拟真实轮询效果 */
+    function fakeFetch(ok) {
+      log("fetch /api/stats/ratings …");
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (!ok) { reject(new Error("HTTP 500（模拟）")); return; }
+          const base = [226, 196, 203, 179, 196];
+          resolve(base.map((v) => v + Math.floor(Math.random() * 20 - 10)));
+        }, 600);
+      });
+    }
+
+    function render(data) {
+      chart.setOption({
+        tooltip: { trigger: "axis" },
+        xAxis: { type: "category", data: ["1星", "2星", "3星", "4星", "5星"] },
+        yAxis: { type: "value" },
+        series: [{ type: "bar", data, itemStyle: { color: "#3b82f6", borderRadius: [4, 4, 0, 0] } }],
+      });
+    }
+
+    async function load(ok) {
+      chart.showLoading({ text: "数据加载中…" });       // ① 加载动画
+      try {
+        const data = await fakeFetch(ok);                // ② 等待接口
+        render(data);                                    // ③ 渲染
+        log("渲染成功：" + JSON.stringify(data));
+      } catch (err) {
+        log("加载失败：" + err.message + " → 图表保留旧数据，错误提示给用户");
+        alert("数据加载失败：" + err.message);            // ④ 失败兜底（真实项目用页内提示条）
+      } finally {
+        chart.hideLoading();                             // ⑤ 无论成败都关 loading
+      }
+    }
+
+    function togglePoll() {
+      if (pollTimer) { clearInterval(pollTimer); pollTimer = null; log("轮询已停止"); return; }
+      pollTimer = setInterval(() => load(true), 3000);
+      log("轮询已开启（3s）");
+    }
+
+    document.getElementById("btn-ok").onclick = () => load(true);
+    document.getElementById("btn-fail").onclick = () => load(false);
+    document.getElementById("btn-poll").onclick = togglePoll;
+
+    window.addEventListener("resize", () => chart.resize());
+    log("提示：点击上面按钮体验完整流程");
+  </script>
+</body>
+</html>

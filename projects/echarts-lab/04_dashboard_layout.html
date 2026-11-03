@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard 布局与联动（静态数据版）</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@6.1.0/dist/echarts.min.js"></script>
+  <script>
+    if (typeof echarts === "undefined") {
+      document.write('<script src="https://registry.npmmirror.com/echarts/6.1.0/files/dist/echarts.min.js"><\/script>');
+    }
+  </script>
+  <style>
+    :root { --bg:#0f172a; --panel:#1e293b; --border:#334155; --text:#e2e8f0; --muted:#94a3b8; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--bg); color:var(--text); font-family:"PingFang SC",sans-serif; padding:14px 18px; }
+    h1 { font-size:20px; color:#38bdf8; letter-spacing:2px; }
+    .sub { color:var(--muted); font-size:12px; margin-bottom:12px; }
+    .kpi-row { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-bottom:12px; }
+    .kpi { background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:12px 14px; }
+    .kpi .num { font-size:26px; font-weight:700; color:#38bdf8; }
+    .kpi .label { font-size:12px; color:var(--muted); }
+    .grid { display:grid; gap:10px; grid-template-columns:repeat(2,1fr);
+            grid-template-areas:"main side" "main bottom"; }
+    .panel { background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:10px 12px; }
+    .panel h2 { font-size:13px; font-weight:600; margin-bottom:6px; }
+    .chart { width:100%; height:260px; }
+    #main { grid-area:main; } #main .chart { height:540px; }
+    #side { grid-area:side; } #bottom { grid-area:bottom; }
+    @media (max-width:900px){ .grid{ grid-template-columns:1fr; grid-template-areas:"main" "side" "bottom"; } #main .chart{height:300px;} }
+    .hint { color:var(--muted); font-size:12px; margin-top:10px; }
+  </style>
+</head>
+<body>
+  <h1>Dashboard 布局与联动</h1>
+  <div class="sub">KPI 行 + 主图（跨两行）+ 侧图/底图；点击柱状图类目，联动折线图与标题（echarts.connect 同步 tooltip，事件驱动过滤）</div>
+
+  <div class="kpi-row" id="kpis"></div>
+
+  <div class="grid">
+    <div class="panel" id="main"><h2>主图 · 点击类目联动右侧</h2><div id="c-main" class="chart"></div></div>
+    <div class="panel" id="side"><h2 id="side-title">折线 · 全量趋势</h2><div id="c-side" class="chart"></div></div>
+    <div class="panel" id="bottom"><h2>底部 · 饼图构成</h2><div id="c-bottom" class="chart"></div></div>
+  </div>
+
+  <div class="hint">要点：①echarts.connect(mainChart, sideChart) 同步 tooltip；②main.on("click") 拿到类目名后 setOption 更新 side 的数据与标题。</div>
+
+  <script>
+    // ---- KPI ----
+    const kpis = [
+      { num: "1,000", label: "图书总数" },
+      { num: "50", label: "分类数" },
+      { num: "£35.07", label: "平均价格" },
+      { num: "2.92★", label: "平均评分" },
+      { num: "8.6", label: "平均库存(件)" },
+    ];
+    document.getElementById("kpis").innerHTML = kpis
+      .map((k) => `<div class="kpi"><div class="num">${k.num}</div><div class="label">${k.label}</div></div>`)
+      .join("");
+
+    // ---- 数据（静态演示，模拟按分类的时间序列） ----
+    const categories = ["Default", "Nonfiction", "Sequential Art", "Fiction", "Fantasy"];
+    const catCounts = [152, 110, 75, 65, 48];
+    const months = ["5月", "6月", "7月", "8月", "9月", "10月", "11月"];
+    const trendByCat = {};
+    categories.forEach((c, i) => {
+      trendByCat[c] = months.map((m, j) => 30 + i * 8 + j * (3 + i) + Math.round(Math.sin(j + i) * 6));
+    });
+    const allTrend = months.map((m, j) => categories.reduce((s, c) => s + trendByCat[c][j], 0));
+
+    // ---- 主图：横向条形（点击类目联动） ----
+    const mainChart = echarts.init(document.getElementById("c-main"));
+    mainChart.setOption({
+      tooltip: { trigger: "item" },
+      grid: { left: 110, right: 30 },
+      xAxis: { type: "value" },
+      yAxis: { type: "category", data: [...categories].reverse() },
+      series: [{
+        type: "bar", data: [...catCounts].reverse(),
+        itemStyle: { color: "#38bdf8", borderRadius: [0, 4, 4, 0] },
+        label: { show: true, position: "right", color: "#e2e8f0" },
+      }],
+    });
+
+    // ---- 侧图：折线（数据随主图点击变化） ----
+    const sideChart = echarts.init(document.getElementById("c-side"));
+    function renderSide(cat) {
+      sideChart.setOption({
+        tooltip: { trigger: "axis" },
+        xAxis: { type: "category", data: months },
+        yAxis: { type: "value", max: 120 },
+        series: [{
+          type: "line", smooth: true, areaStyle: { opacity: 0.15 },
+          data: cat ? trendByCat[cat] : allTrend,
+          lineStyle: { color: "#a78bfa", width: 3 }, itemStyle: { color: "#a78bfa" },
+        }],
+      });
+    }
+    renderSide(null);
+
+    // ---- 底图：环形 ----
+    const bottomChart = echarts.init(document.getElementById("c-bottom"));
+    bottomChart.setOption({
+      tooltip: { trigger: "item" },
+      legend: { bottom: 0, textStyle: { color: "#94a3b8" } },
+      series: [{
+        type: "pie", radius: ["38%", "62%"], center: ["50%", "42%"],
+        label: { color: "#cbd5e1", formatter: "{b}: {d}%" },
+        color: ["#38bdf8", "#a78bfa", "#fbbf24", "#34d399", "#fb7185"],
+        data: categories.map((c, i) => ({ name: c, value: catCounts[i] })),
+      }],
+    });
+
+    // ---- 联动 1：tooltip 同步 ----
+    echarts.connect([mainChart, sideChart, bottomChart]);
+
+    // ---- 联动 2：事件驱动过滤 ----
+    mainChart.on("click", (params) => {
+      const cat = params.name;
+      renderSide(cat);                       // 更新侧图数据
+      document.getElementById("side-title").textContent = "折线 · " + cat + " 趋势";
+    });
+
+    window.addEventListener("resize", () => [mainChart, sideChart, bottomChart].forEach((c) => c.resize()));
+  </script>
+</body>
+</html>

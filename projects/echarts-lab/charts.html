@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>图表选型示例集</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@6.1.0/dist/echarts.min.js"></script>
+  <script>
+    if (typeof echarts === "undefined") {
+      document.write('<script src="https://registry.npmmirror.com/echarts/6.1.0/files/dist/echarts.min.js"><\/script>');
+    }
+  </script>
+  <style>
+    body { font-family: "PingFang SC", sans-serif; max-width: 1100px; margin: 0 auto; padding: 24px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .chart { width: 100%; height: 300px; border: 1px solid #e5e7eb; border-radius: 8px; }
+    h3 { margin: 4px 0; }
+    p { color: #6b7280; font-size: 13px; margin: 2px 0 8px; }
+  </style>
+</head>
+<body>
+  <h1>常用图表类型：每张图配「适用 / 不适用」说明</h1>
+  <p>示例数据均为教学演示值；选型决策树见文档 02 篇。</p>
+  <div class="grid">
+    <div><h3>柱状图 · 比较</h3><p>✓ 类目间数量比较 ✗ 展示趋势（趋势用折线）</p><div id="c1" class="chart"></div></div>
+    <div><h3>折线图 · 趋势</h3><p>✓ 时间序列趋势/多系列对比 ✗ 离散类目比较</p><div id="c2" class="chart"></div></div>
+    <div><h3>饼/环形图 · 构成</h3><p>✓ 占比构成（≤6 项）✗ 多项或精确比较（用柱状）</p><div id="c3" class="chart"></div></div>
+    <div><h3>散点图 · 关系</h3><p>✓ 两变量相关性与聚集 ✗ 单变量分布（用直方图）</p><div id="c4" class="chart"></div></div>
+    <div><h3>雷达图 · 多维对比</h3><p>✓ 3-8 个维度的整体对比 ✗ 维度间不可比</p><div id="c5" class="chart"></div></div>
+    <div><h3>热力图 · 密度</h3><p>✓ 两个离散维度的密度/值矩阵 ✗ 精确读数</p><div id="c6" class="chart"></div></div>
+  </div>
+
+  <script>
+    const P = ["#3b82f6", "#a78bfa", "#f59e0b", "#10b981", "#ef4444", "#06b6d4"];
+    const tip = { trigger: "item" };
+    const axColor = "#6b7280";
+
+    // 柱状：分组柱（两个系列）
+    echarts.init(document.getElementById("c1")).setOption({
+      color: P, tooltip: { trigger: "axis" },
+      legend: { top: 0 },
+      xAxis: { type: "category", data: ["第 01 章", "第 02 章", "第 03 章", "第 04 章", "第 05 章"], axisLabel: { color: axColor } },
+      yAxis: { type: "value", axisLabel: { color: axColor } },
+      series: [
+        { name: "2025", type: "bar", data: [120, 200, 150, 80, 270], itemStyle: { borderRadius: [3, 3, 0, 0] } },
+        { name: "2026", type: "bar", data: [180, 160, 210, 140, 240], itemStyle: { borderRadius: [3, 3, 0, 0] } },
+      ],
+    });
+
+    // 折线：双系列 + 堆叠开关演示
+    echarts.init(document.getElementById("c2")).setOption({
+      color: P, tooltip: { trigger: "axis" },
+      legend: { top: 0 },
+      xAxis: { type: "category", data: ["1月", "2月", "3月", "4月", "5月", "6月"], axisLabel: { color: axColor } },
+      yAxis: { type: "value", axisLabel: { color: axColor } },
+      series: [
+        { name: "爬虫采集", type: "line", smooth: true, data: [820, 932, 901, 1290, 1330, 1520] },
+        { name: "API 调用", type: "line", smooth: true, data: [450, 512, 601, 690, 730, 820] },
+      ],
+    });
+
+    // 环形：radius 数组 + 百分比标签
+    echarts.init(document.getElementById("c3")).setOption({
+      color: P, tooltip: tip,
+      legend: { bottom: 0 },
+      series: [{
+        type: "pie", radius: ["38%", "62%"], center: ["50%", "46%"],
+        label: { formatter: "{b}: {d}%" },
+        data: [
+          { name: "爬虫", value: 320 }, { name: "清洗", value: 240 },
+          { name: "分析", value: 180 }, { name: "可视化", value: 120 },
+        ],
+      }],
+    });
+
+    // 散点：两组人群，symbolSize 映射
+    echarts.init(document.getElementById("c4")).setOption({
+      color: P, tooltip: tip,
+      xAxis: { name: "学习时长(h)", type: "value", axisLabel: { color: axColor } },
+      yAxis: { name: "项目得分", type: "value", axisLabel: { color: axColor } },
+      series: [
+        { name: "按教程学", type: "scatter", symbolSize: 10,
+          data: [[10, 45], [18, 62], [25, 70], [32, 78], [40, 85], [46, 90]] },
+        { name: "自学摸索", type: "scatter", symbolSize: 10,
+          data: [[12, 30], [20, 41], [28, 55], [35, 60], [42, 72]] },
+      ],
+    });
+
+    // 雷达：两套方案对比
+    echarts.init(document.getElementById("c5")).setOption({
+      color: P, tooltip: tip,
+      legend: { bottom: 0 },
+      radar: {
+        indicator: [
+          { name: "开发速度", max: 100 }, { name: "可维护性", max: 100 },
+          { name: "性能", max: 100 }, { name: "生态", max: 100 }, { name: "学习成本(高=易)", max: 100 },
+        ],
+      },
+      series: [{
+        type: "radar",
+        data: [
+          { name: "ECharts", value: [90, 85, 88, 95, 90] },
+          { name: "D3", value: [40, 70, 95, 80, 45] },
+        ],
+      }],
+    });
+
+    // 热力：周 × 时段（笛卡尔坐标 + visualMap）
+    const hours = ["8点", "10点", "12点", "14点", "16点", "18点", "20点", "22点"];
+    const days = ["周一", "周二", "周三", "周四", "周五"];
+    const heatData = [];
+    for (let d = 0; d < 5; d++) {
+      for (let h = 0; h < 8; h++) {
+        heatData.push([h, d, Math.round(Math.random() * 40 + (h >= 3 && h <= 6 ? 40 : 5))]);
+      }
+    }
+    echarts.init(document.getElementById("c6")).setOption({
+      tooltip: { position: "top" },
+      grid: { top: 10, left: 60 },
+      xAxis: { type: "category", data: hours, axisLabel: { color: axColor } },
+      yAxis: { type: "category", data: days, axisLabel: { color: axColor } },
+      visualMap: { min: 0, max: 80, calculable: true, orient: "horizontal", left: "center", bottom: 0, inRange: { color: ["#dbeafe", "#3b82f6", "#1e3a8a"] } },
+      series: [{ type: "heatmap", data: heatData, label: { show: false } }],
+    });
+
+    window.addEventListener("resize", () => {
+      document.querySelectorAll(".chart").forEach((el) => {
+        const inst = echarts.getInstanceByDom(el);
+        if (inst) inst.resize();
+      });
+    });
+  </script>
+</body>
+</html>
