@@ -1,0 +1,2493 @@
+{
+  "summary": {
+    "total_books": 1000,
+    "categories": 50,
+    "avg_price": 35.07,
+    "median_price": 35.98,
+    "max_price": 59.99,
+    "min_price": 10.0,
+    "avg_rating": 2.92,
+    "in_stock": 1000,
+    "out_of_stock": 0,
+    "total_reviews": 0,
+    "avg_stock": 8.6
+  },
+  "rating_distribution": [
+    {
+      "rating": 1,
+      "count": 226
+    },
+    {
+      "rating": 2,
+      "count": 196
+    },
+    {
+      "rating": 3,
+      "count": 203
+    },
+    {
+      "rating": 4,
+      "count": 179
+    },
+    {
+      "rating": 5,
+      "count": 196
+    }
+  ],
+  "price_histogram": [
+    {
+      "bucket": "0-10",
+      "count": 0
+    },
+    {
+      "bucket": "10-20",
+      "count": 196
+    },
+    {
+      "bucket": "20-30",
+      "count": 206
+    },
+    {
+      "bucket": "30-40",
+      "count": 195
+    },
+    {
+      "bucket": "40-50",
+      "count": 205
+    },
+    {
+      "bucket": "50-60",
+      "count": 198
+    },
+    {
+      "bucket": "60+",
+      "count": 0
+    }
+  ],
+  "categories": [
+    {
+      "category": "Default",
+      "count": 152,
+      "avg_price": 34.39,
+      "avg_rating": 2.84,
+      "total_stock": 1345
+    },
+    {
+      "category": "Nonfiction",
+      "count": 110,
+      "avg_price": 34.26,
+      "avg_rating": 2.88,
+      "total_stock": 975
+    },
+    {
+      "category": "Sequential Art",
+      "count": 75,
+      "avg_price": 34.57,
+      "avg_rating": 2.97,
+      "total_stock": 686
+    },
+    {
+      "category": "Add a comment",
+      "count": 67,
+      "avg_price": 35.8,
+      "avg_rating": 2.76,
+      "total_stock": 516
+    },
+    {
+      "category": "Fiction",
+      "count": 65,
+      "avg_price": 36.07,
+      "avg_rating": 3.18,
+      "total_stock": 588
+    },
+    {
+      "category": "Young Adult",
+      "count": 54,
+      "avg_price": 35.45,
+      "avg_rating": 3.3,
+      "total_stock": 464
+    },
+    {
+      "category": "Fantasy",
+      "count": 48,
+      "avg_price": 39.59,
+      "avg_rating": 3.08,
+      "total_stock": 372
+    },
+    {
+      "category": "Romance",
+      "count": 35,
+      "avg_price": 33.93,
+      "avg_rating": 2.63,
+      "total_stock": 269
+    },
+    {
+      "category": "Mystery",
+      "count": 32,
+      "avg_price": 31.72,
+      "avg_rating": 2.94,
+      "total_stock": 290
+    },
+    {
+      "category": "Food and Drink",
+      "count": 30,
+      "avg_price": 31.41,
+      "avg_rating": 2.9,
+      "total_stock": 319
+    },
+    {
+      "category": "Childrens",
+      "count": 29,
+      "avg_price": 32.64,
+      "avg_rating": 2.62,
+      "total_stock": 229
+    },
+    {
+      "category": "Historical Fiction",
+      "count": 26,
+      "avg_price": 33.64,
+      "avg_rating": 3.23,
+      "total_stock": 194
+    },
+    {
+      "category": "Poetry",
+      "count": 19,
+      "avg_price": 35.97,
+      "avg_rating": 3.53,
+      "total_stock": 235
+    },
+    {
+      "category": "Classics",
+      "count": 19,
+      "avg_price": 36.55,
+      "avg_rating": 2.47,
+      "total_stock": 55
+    },
+    {
+      "category": "History",
+      "count": 18,
+      "avg_price": 37.29,
+      "avg_rating": 2.94,
+      "total_stock": 181
+    },
+    {
+      "category": "Horror",
+      "count": 17,
+      "avg_price": 35.95,
+      "avg_rating": 2.71,
+      "total_stock": 136
+    },
+    {
+      "category": "Womens Fiction",
+      "count": 17,
+      "avg_price": 36.79,
+      "avg_rating": 3.12,
+      "total_stock": 91
+    },
+    {
+      "category": "Science Fiction",
+      "count": 16,
+      "avg_price": 33.8,
+      "avg_rating": 2.25,
+      "total_stock": 125
+    },
+    {
+      "category": "Science",
+      "count": 14,
+      "avg_price": 33.09,
+      "avg_rating": 2.93,
+      "total_stock": 105
+    },
+    {
+      "category": "Music",
+      "count": 13,
+      "avg_price": 35.64,
+      "avg_rating": 3.15,
+      "total_stock": 111
+    },
+    {
+      "category": "Business",
+      "count": 12,
+      "avg_price": 32.46,
+      "avg_rating": 2.92,
+      "total_stock": 133
+    },
+    {
+      "category": "Travel",
+      "count": 11,
+      "avg_price": 39.79,
+      "avg_rating": 2.73,
+      "total_stock": 89
+    },
+    {
+      "category": "Thriller",
+      "count": 11,
+      "avg_price": 31.43,
+      "avg_rating": 2.73,
+      "total_stock": 119
+    },
+    {
+      "category": "Philosophy",
+      "count": 11,
+      "avg_price": 33.56,
+      "avg_rating": 2.36,
+      "total_stock": 82
+    },
+    {
+      "category": "Humor",
+      "count": 10,
+      "avg_price": 33.5,
+      "avg_rating": 3.4,
+      "total_stock": 84
+    },
+    {
+      "category": "Autobiography",
+      "count": 9,
+      "avg_price": 37.05,
+      "avg_rating": 3.0,
+      "total_stock": 57
+    },
+    {
+      "category": "Art",
+      "count": 8,
+      "avg_price": 38.52,
+      "avg_rating": 3.62,
+      "total_stock": 72
+    },
+    {
+      "category": "Psychology",
+      "count": 7,
+      "avg_price": 34.22,
+      "avg_rating": 1.71,
+      "total_stock": 52
+    },
+    {
+      "category": "Religion",
+      "count": 7,
+      "avg_price": 32.57,
+      "avg_rating": 3.14,
+      "total_stock": 60
+    },
+    {
+      "category": "Spirituality",
+      "count": 6,
+      "avg_price": 35.1,
+      "avg_rating": 3.33,
+      "total_stock": 69
+    },
+    {
+      "category": "Christian Fiction",
+      "count": 6,
+      "avg_price": 34.38,
+      "avg_rating": 4.17,
+      "total_stock": 55
+    },
+    {
+      "category": "New Adult",
+      "count": 6,
+      "avg_price": 46.38,
+      "avg_rating": 3.17,
+      "total_stock": 49
+    },
+    {
+      "category": "Self Help",
+      "count": 5,
+      "avg_price": 40.62,
+      "avg_rating": 2.6,
+      "total_stock": 59
+    },
+    {
+      "category": "Sports and Games",
+      "count": 5,
+      "avg_price": 41.17,
+      "avg_rating": 3.0,
+      "total_stock": 10
+    },
+    {
+      "category": "Biography",
+      "count": 5,
+      "avg_price": 33.66,
+      "avg_rating": 2.2,
+      "total_stock": 43
+    },
+    {
+      "category": "Health",
+      "count": 4,
+      "avg_price": 51.45,
+      "avg_rating": 3.75,
+      "total_stock": 49
+    },
+    {
+      "category": "Christian",
+      "count": 3,
+      "avg_price": 42.5,
+      "avg_rating": 2.67,
+      "total_stock": 37
+    },
+    {
+      "category": "Politics",
+      "count": 3,
+      "avg_price": 53.61,
+      "avg_rating": 2.33,
+      "total_stock": 45
+    },
+    {
+      "category": "Contemporary",
+      "count": 3,
+      "avg_price": 36.2,
+      "avg_rating": 2.33,
+      "total_stock": 33
+    },
+    {
+      "category": "Historical",
+      "count": 2,
+      "avg_price": 22.83,
+      "avg_rating": 3.0,
+      "total_stock": 20
+    },
+    {
+      "category": "Parenting",
+      "count": 1,
+      "avg_price": 37.35,
+      "avg_rating": 2.0,
+      "total_stock": 3
+    },
+    {
+      "category": "Paranormal",
+      "count": 1,
+      "avg_price": 15.4,
+      "avg_rating": 1.0,
+      "total_stock": 1
+    },
+    {
+      "category": "Short Stories",
+      "count": 1,
+      "avg_price": 35.88,
+      "avg_rating": 1.0,
+      "total_stock": 8
+    },
+    {
+      "category": "Novels",
+      "count": 1,
+      "avg_price": 54.81,
+      "avg_rating": 5.0,
+      "total_stock": 9
+    },
+    {
+      "category": "Crime",
+      "count": 1,
+      "avg_price": 10.97,
+      "avg_rating": 1.0,
+      "total_stock": 15
+    },
+    {
+      "category": "Suspense",
+      "count": 1,
+      "avg_price": 58.33,
+      "avg_rating": 3.0,
+      "total_stock": 8
+    },
+    {
+      "category": "Cultural",
+      "count": 1,
+      "avg_price": 36.58,
+      "avg_rating": 1.0,
+      "total_stock": 15
+    },
+    {
+      "category": "Erotica",
+      "count": 1,
+      "avg_price": 19.19,
+      "avg_rating": 5.0,
+      "total_stock": 15
+    },
+    {
+      "category": "Adult Fiction",
+      "count": 1,
+      "avg_price": 15.36,
+      "avg_rating": 5.0,
+      "total_stock": 3
+    },
+    {
+      "category": "Academic",
+      "count": 1,
+      "avg_price": 13.12,
+      "avg_rating": 2.0,
+      "total_stock": 5
+    }
+  ],
+  "top_rated": [
+    {
+      "title": "Sapiens: A Brief History of Humankind",
+      "price": 54.23,
+      "rating": 5,
+      "category": "History"
+    },
+    {
+      "title": "Set Me Free",
+      "price": 17.46,
+      "rating": 5,
+      "category": "Young Adult"
+    },
+    {
+      "title": "Scott Pilgrim's Precious Little Life (Scott Pilgrim #1)",
+      "price": 52.29,
+      "rating": 5,
+      "category": "Sequential Art"
+    },
+    {
+      "title": "Rip it Up and Start Again",
+      "price": 35.02,
+      "rating": 5,
+      "category": "Music"
+    },
+    {
+      "title": "Chase Me (Paris Nights #2)",
+      "price": 25.27,
+      "rating": 5,
+      "category": "Romance"
+    },
+    {
+      "title": "Black Dust",
+      "price": 34.53,
+      "rating": 5,
+      "category": "Romance"
+    },
+    {
+      "title": "Worlds Elsewhere: Journeys Around Shakespeare’s Globe",
+      "price": 40.3,
+      "rating": 5,
+      "category": "Nonfiction"
+    },
+    {
+      "title": "The Four Agreements: A Practical Guide to Personal Freedom",
+      "price": 17.66,
+      "rating": 5,
+      "category": "Spirituality"
+    },
+    {
+      "title": "The Elephant Tree",
+      "price": 23.82,
+      "rating": 5,
+      "category": "Thriller"
+    },
+    {
+      "title": "Sophie's World",
+      "price": 15.94,
+      "rating": 5,
+      "category": "Philosophy"
+    }
+  ],
+  "price_rating_scatter": [
+    {
+      "price": 11.38,
+      "rating": 5
+    },
+    {
+      "price": 20.93,
+      "rating": 1
+    },
+    {
+      "price": 33.92,
+      "rating": 3
+    },
+    {
+      "price": 48.39,
+      "rating": 5
+    },
+    {
+      "price": 20.5,
+      "rating": 3
+    },
+    {
+      "price": 26.77,
+      "rating": 1
+    },
+    {
+      "price": 16.96,
+      "rating": 1
+    },
+    {
+      "price": 20.9,
+      "rating": 2
+    },
+    {
+      "price": 36.17,
+      "rating": 2
+    },
+    {
+      "price": 24.12,
+      "rating": 1
+    },
+    {
+      "price": 33.26,
+      "rating": 2
+    },
+    {
+      "price": 25.02,
+      "rating": 3
+    },
+    {
+      "price": 34.13,
+      "rating": 5
+    },
+    {
+      "price": 38.43,
+      "rating": 5
+    },
+    {
+      "price": 10.64,
+      "rating": 3
+    },
+    {
+      "price": 53.47,
+      "rating": 1
+    },
+    {
+      "price": 41.56,
+      "rating": 1
+    },
+    {
+      "price": 14.08,
+      "rating": 5
+    },
+    {
+      "price": 19.21,
+      "rating": 1
+    },
+    {
+      "price": 25.01,
+      "rating": 3
+    },
+    {
+      "price": 59.45,
+      "rating": 4
+    },
+    {
+      "price": 20.47,
+      "rating": 5
+    },
+    {
+      "price": 43.14,
+      "rating": 1
+    },
+    {
+      "price": 39.61,
+      "rating": 5
+    },
+    {
+      "price": 46.82,
+      "rating": 4
+    },
+    {
+      "price": 52.67,
+      "rating": 4
+    },
+    {
+      "price": 29.17,
+      "rating": 2
+    },
+    {
+      "price": 28.42,
+      "rating": 4
+    },
+    {
+      "price": 18.51,
+      "rating": 4
+    },
+    {
+      "price": 42.4,
+      "rating": 1
+    },
+    {
+      "price": 40.79,
+      "rating": 2
+    },
+    {
+      "price": 17.44,
+      "rating": 4
+    },
+    {
+      "price": 38.13,
+      "rating": 5
+    },
+    {
+      "price": 35.96,
+      "rating": 4
+    },
+    {
+      "price": 49.67,
+      "rating": 4
+    },
+    {
+      "price": 35.61,
+      "rating": 3
+    },
+    {
+      "price": 57.22,
+      "rating": 3
+    },
+    {
+      "price": 53.68,
+      "rating": 4
+    },
+    {
+      "price": 52.88,
+      "rating": 4
+    },
+    {
+      "price": 45.22,
+      "rating": 3
+    },
+    {
+      "price": 31.85,
+      "rating": 3
+    },
+    {
+      "price": 40.11,
+      "rating": 1
+    },
+    {
+      "price": 54.07,
+      "rating": 2
+    },
+    {
+      "price": 34.74,
+      "rating": 4
+    },
+    {
+      "price": 47.02,
+      "rating": 3
+    },
+    {
+      "price": 11.83,
+      "rating": 5
+    },
+    {
+      "price": 57.7,
+      "rating": 4
+    },
+    {
+      "price": 11.33,
+      "rating": 5
+    },
+    {
+      "price": 33.23,
+      "rating": 1
+    },
+    {
+      "price": 26.66,
+      "rating": 5
+    },
+    {
+      "price": 18.32,
+      "rating": 2
+    },
+    {
+      "price": 56.58,
+      "rating": 1
+    },
+    {
+      "price": 11.89,
+      "rating": 5
+    },
+    {
+      "price": 21.3,
+      "rating": 3
+    },
+    {
+      "price": 25.27,
+      "rating": 5
+    },
+    {
+      "price": 17.66,
+      "rating": 5
+    },
+    {
+      "price": 59.98,
+      "rating": 3
+    },
+    {
+      "price": 13.99,
+      "rating": 2
+    },
+    {
+      "price": 19.6,
+      "rating": 2
+    },
+    {
+      "price": 44.97,
+      "rating": 1
+    },
+    {
+      "price": 25.98,
+      "rating": 4
+    },
+    {
+      "price": 17.27,
+      "rating": 5
+    },
+    {
+      "price": 44.34,
+      "rating": 2
+    },
+    {
+      "price": 15.48,
+      "rating": 2
+    },
+    {
+      "price": 45.51,
+      "rating": 3
+    },
+    {
+      "price": 34.77,
+      "rating": 1
+    },
+    {
+      "price": 19.67,
+      "rating": 5
+    },
+    {
+      "price": 21.12,
+      "rating": 3
+    },
+    {
+      "price": 40.76,
+      "rating": 3
+    },
+    {
+      "price": 52.4,
+      "rating": 5
+    },
+    {
+      "price": 15.97,
+      "rating": 4
+    },
+    {
+      "price": 22.14,
+      "rating": 2
+    },
+    {
+      "price": 11.05,
+      "rating": 5
+    },
+    {
+      "price": 55.55,
+      "rating": 2
+    },
+    {
+      "price": 26.79,
+      "rating": 5
+    },
+    {
+      "price": 18.03,
+      "rating": 1
+    },
+    {
+      "price": 14.82,
+      "rating": 2
+    },
+    {
+      "price": 33.63,
+      "rating": 2
+    },
+    {
+      "price": 57.74,
+      "rating": 4
+    },
+    {
+      "price": 46.47,
+      "rating": 3
+    },
+    {
+      "price": 50.44,
+      "rating": 4
+    },
+    {
+      "price": 37.13,
+      "rating": 1
+    },
+    {
+      "price": 52.15,
+      "rating": 3
+    },
+    {
+      "price": 56.06,
+      "rating": 1
+    },
+    {
+      "price": 47.72,
+      "rating": 2
+    },
+    {
+      "price": 24.8,
+      "rating": 4
+    },
+    {
+      "price": 53.98,
+      "rating": 1
+    },
+    {
+      "price": 45.75,
+      "rating": 4
+    },
+    {
+      "price": 43.45,
+      "rating": 3
+    },
+    {
+      "price": 50.83,
+      "rating": 3
+    },
+    {
+      "price": 20.1,
+      "rating": 5
+    },
+    {
+      "price": 28.45,
+      "rating": 4
+    },
+    {
+      "price": 43.58,
+      "rating": 3
+    },
+    {
+      "price": 14.36,
+      "rating": 2
+    },
+    {
+      "price": 41.67,
+      "rating": 4
+    },
+    {
+      "price": 20.91,
+      "rating": 1
+    },
+    {
+      "price": 24.55,
+      "rating": 1
+    },
+    {
+      "price": 14.07,
+      "rating": 3
+    },
+    {
+      "price": 23.89,
+      "rating": 4
+    },
+    {
+      "price": 49.97,
+      "rating": 4
+    },
+    {
+      "price": 10.02,
+      "rating": 2
+    },
+    {
+      "price": 13.33,
+      "rating": 3
+    },
+    {
+      "price": 14.4,
+      "rating": 1
+    },
+    {
+      "price": 39.24,
+      "rating": 1
+    },
+    {
+      "price": 17.49,
+      "rating": 5
+    },
+    {
+      "price": 10.79,
+      "rating": 3
+    },
+    {
+      "price": 30.54,
+      "rating": 1
+    },
+    {
+      "price": 52.94,
+      "rating": 2
+    },
+    {
+      "price": 12.23,
+      "rating": 2
+    },
+    {
+      "price": 12.34,
+      "rating": 5
+    },
+    {
+      "price": 57.43,
+      "rating": 4
+    },
+    {
+      "price": 56.7,
+      "rating": 5
+    },
+    {
+      "price": 47.09,
+      "rating": 5
+    },
+    {
+      "price": 43.69,
+      "rating": 4
+    },
+    {
+      "price": 48.41,
+      "rating": 1
+    },
+    {
+      "price": 54.81,
+      "rating": 5
+    },
+    {
+      "price": 48.56,
+      "rating": 5
+    },
+    {
+      "price": 56.76,
+      "rating": 4
+    },
+    {
+      "price": 46.64,
+      "rating": 2
+    },
+    {
+      "price": 19.55,
+      "rating": 1
+    },
+    {
+      "price": 24.42,
+      "rating": 1
+    },
+    {
+      "price": 44.05,
+      "rating": 5
+    },
+    {
+      "price": 14.41,
+      "rating": 3
+    },
+    {
+      "price": 45.58,
+      "rating": 1
+    },
+    {
+      "price": 44.48,
+      "rating": 5
+    },
+    {
+      "price": 15.42,
+      "rating": 5
+    },
+    {
+      "price": 41.73,
+      "rating": 4
+    },
+    {
+      "price": 34.06,
+      "rating": 3
+    },
+    {
+      "price": 27.35,
+      "rating": 2
+    },
+    {
+      "price": 40.17,
+      "rating": 1
+    },
+    {
+      "price": 44.58,
+      "rating": 2
+    },
+    {
+      "price": 54.86,
+      "rating": 1
+    },
+    {
+      "price": 52.79,
+      "rating": 5
+    },
+    {
+      "price": 55.53,
+      "rating": 1
+    },
+    {
+      "price": 46.01,
+      "rating": 4
+    },
+    {
+      "price": 19.09,
+      "rating": 1
+    },
+    {
+      "price": 30.81,
+      "rating": 1
+    },
+    {
+      "price": 24.7,
+      "rating": 3
+    },
+    {
+      "price": 54.64,
+      "rating": 3
+    },
+    {
+      "price": 32.24,
+      "rating": 5
+    },
+    {
+      "price": 45.07,
+      "rating": 2
+    },
+    {
+      "price": 40.67,
+      "rating": 2
+    },
+    {
+      "price": 55.55,
+      "rating": 5
+    },
+    {
+      "price": 24.48,
+      "rating": 3
+    },
+    {
+      "price": 11.75,
+      "rating": 3
+    },
+    {
+      "price": 36.52,
+      "rating": 2
+    },
+    {
+      "price": 12.47,
+      "rating": 3
+    },
+    {
+      "price": 23.4,
+      "rating": 1
+    },
+    {
+      "price": 20.11,
+      "rating": 3
+    },
+    {
+      "price": 44.14,
+      "rating": 1
+    },
+    {
+      "price": 17.21,
+      "rating": 4
+    },
+    {
+      "price": 23.15,
+      "rating": 2
+    },
+    {
+      "price": 34.96,
+      "rating": 4
+    },
+    {
+      "price": 24.57,
+      "rating": 3
+    },
+    {
+      "price": 30.66,
+      "rating": 3
+    },
+    {
+      "price": 54.21,
+      "rating": 1
+    },
+    {
+      "price": 57.62,
+      "rating": 5
+    },
+    {
+      "price": 30.89,
+      "rating": 5
+    },
+    {
+      "price": 38.16,
+      "rating": 4
+    },
+    {
+      "price": 31.22,
+      "rating": 2
+    },
+    {
+      "price": 13.76,
+      "rating": 3
+    },
+    {
+      "price": 53.49,
+      "rating": 2
+    },
+    {
+      "price": 28.32,
+      "rating": 5
+    },
+    {
+      "price": 38.71,
+      "rating": 3
+    },
+    {
+      "price": 51.32,
+      "rating": 5
+    },
+    {
+      "price": 34.79,
+      "rating": 2
+    },
+    {
+      "price": 14.75,
+      "rating": 5
+    },
+    {
+      "price": 55.65,
+      "rating": 5
+    },
+    {
+      "price": 40.12,
+      "rating": 2
+    },
+    {
+      "price": 14.39,
+      "rating": 4
+    },
+    {
+      "price": 33.26,
+      "rating": 2
+    },
+    {
+      "price": 10.29,
+      "rating": 4
+    },
+    {
+      "price": 37.97,
+      "rating": 2
+    },
+    {
+      "price": 39.07,
+      "rating": 5
+    },
+    {
+      "price": 19.22,
+      "rating": 2
+    },
+    {
+      "price": 39.43,
+      "rating": 1
+    },
+    {
+      "price": 44.73,
+      "rating": 4
+    },
+    {
+      "price": 45.21,
+      "rating": 3
+    },
+    {
+      "price": 38.95,
+      "rating": 3
+    },
+    {
+      "price": 27.8,
+      "rating": 1
+    },
+    {
+      "price": 25.37,
+      "rating": 5
+    },
+    {
+      "price": 25.01,
+      "rating": 3
+    },
+    {
+      "price": 35.28,
+      "rating": 3
+    },
+    {
+      "price": 51.17,
+      "rating": 5
+    },
+    {
+      "price": 38.62,
+      "rating": 1
+    },
+    {
+      "price": 42.15,
+      "rating": 4
+    },
+    {
+      "price": 27.06,
+      "rating": 1
+    },
+    {
+      "price": 56.54,
+      "rating": 2
+    },
+    {
+      "price": 40.83,
+      "rating": 4
+    },
+    {
+      "price": 12.3,
+      "rating": 1
+    },
+    {
+      "price": 58.35,
+      "rating": 3
+    },
+    {
+      "price": 33.14,
+      "rating": 3
+    },
+    {
+      "price": 27.88,
+      "rating": 2
+    },
+    {
+      "price": 42.16,
+      "rating": 3
+    },
+    {
+      "price": 50.54,
+      "rating": 5
+    },
+    {
+      "price": 48.49,
+      "rating": 4
+    },
+    {
+      "price": 32.01,
+      "rating": 2
+    },
+    {
+      "price": 15.38,
+      "rating": 5
+    },
+    {
+      "price": 24.91,
+      "rating": 5
+    },
+    {
+      "price": 19.83,
+      "rating": 2
+    },
+    {
+      "price": 44.18,
+      "rating": 4
+    },
+    {
+      "price": 12.16,
+      "rating": 5
+    },
+    {
+      "price": 46.02,
+      "rating": 3
+    },
+    {
+      "price": 15.79,
+      "rating": 1
+    },
+    {
+      "price": 42.72,
+      "rating": 1
+    },
+    {
+      "price": 45.56,
+      "rating": 3
+    },
+    {
+      "price": 55.99,
+      "rating": 2
+    },
+    {
+      "price": 36.25,
+      "rating": 3
+    },
+    {
+      "price": 46.33,
+      "rating": 2
+    },
+    {
+      "price": 41.0,
+      "rating": 5
+    },
+    {
+      "price": 20.59,
+      "rating": 5
+    },
+    {
+      "price": 27.37,
+      "rating": 4
+    },
+    {
+      "price": 36.34,
+      "rating": 1
+    },
+    {
+      "price": 19.69,
+      "rating": 1
+    },
+    {
+      "price": 52.11,
+      "rating": 2
+    },
+    {
+      "price": 49.32,
+      "rating": 5
+    },
+    {
+      "price": 20.02,
+      "rating": 5
+    },
+    {
+      "price": 28.77,
+      "rating": 3
+    },
+    {
+      "price": 15.4,
+      "rating": 1
+    },
+    {
+      "price": 42.8,
+      "rating": 2
+    },
+    {
+      "price": 49.05,
+      "rating": 3
+    },
+    {
+      "price": 44.92,
+      "rating": 3
+    },
+    {
+      "price": 40.44,
+      "rating": 4
+    },
+    {
+      "price": 18.78,
+      "rating": 3
+    },
+    {
+      "price": 31.58,
+      "rating": 5
+    },
+    {
+      "price": 50.1,
+      "rating": 1
+    },
+    {
+      "price": 44.81,
+      "rating": 4
+    },
+    {
+      "price": 21.8,
+      "rating": 3
+    },
+    {
+      "price": 39.77,
+      "rating": 3
+    },
+    {
+      "price": 20.89,
+      "rating": 4
+    },
+    {
+      "price": 16.73,
+      "rating": 2
+    },
+    {
+      "price": 43.38,
+      "rating": 1
+    },
+    {
+      "price": 55.65,
+      "rating": 5
+    },
+    {
+      "price": 36.39,
+      "rating": 3
+    },
+    {
+      "price": 36.89,
+      "rating": 1
+    },
+    {
+      "price": 31.05,
+      "rating": 3
+    },
+    {
+      "price": 56.8,
+      "rating": 4
+    },
+    {
+      "price": 47.11,
+      "rating": 2
+    },
+    {
+      "price": 29.0,
+      "rating": 1
+    },
+    {
+      "price": 28.01,
+      "rating": 1
+    },
+    {
+      "price": 47.82,
+      "rating": 4
+    },
+    {
+      "price": 30.8,
+      "rating": 3
+    },
+    {
+      "price": 20.9,
+      "rating": 3
+    },
+    {
+      "price": 32.87,
+      "rating": 2
+    },
+    {
+      "price": 15.06,
+      "rating": 4
+    },
+    {
+      "price": 54.35,
+      "rating": 2
+    },
+    {
+      "price": 52.98,
+      "rating": 5
+    },
+    {
+      "price": 51.04,
+      "rating": 2
+    },
+    {
+      "price": 10.16,
+      "rating": 3
+    },
+    {
+      "price": 53.95,
+      "rating": 3
+    },
+    {
+      "price": 18.97,
+      "rating": 1
+    },
+    {
+      "price": 37.26,
+      "rating": 4
+    },
+    {
+      "price": 11.1,
+      "rating": 3
+    },
+    {
+      "price": 20.02,
+      "rating": 1
+    },
+    {
+      "price": 13.71,
+      "rating": 3
+    },
+    {
+      "price": 11.23,
+      "rating": 4
+    },
+    {
+      "price": 32.38,
+      "rating": 1
+    },
+    {
+      "price": 43.19,
+      "rating": 4
+    },
+    {
+      "price": 33.78,
+      "rating": 3
+    },
+    {
+      "price": 22.65,
+      "rating": 1
+    },
+    {
+      "price": 36.8,
+      "rating": 3
+    },
+    {
+      "price": 36.39,
+      "rating": 5
+    },
+    {
+      "price": 53.9,
+      "rating": 2
+    },
+    {
+      "price": 35.43,
+      "rating": 4
+    },
+    {
+      "price": 37.55,
+      "rating": 1
+    },
+    {
+      "price": 21.74,
+      "rating": 5
+    },
+    {
+      "price": 24.61,
+      "rating": 2
+    },
+    {
+      "price": 11.84,
+      "rating": 1
+    },
+    {
+      "price": 58.0,
+      "rating": 5
+    },
+    {
+      "price": 41.46,
+      "rating": 4
+    },
+    {
+      "price": 53.63,
+      "rating": 2
+    },
+    {
+      "price": 37.92,
+      "rating": 2
+    },
+    {
+      "price": 11.64,
+      "rating": 5
+    },
+    {
+      "price": 13.82,
+      "rating": 2
+    },
+    {
+      "price": 49.67,
+      "rating": 3
+    },
+    {
+      "price": 52.15,
+      "rating": 1
+    },
+    {
+      "price": 34.95,
+      "rating": 4
+    },
+    {
+      "price": 11.83,
+      "rating": 2
+    },
+    {
+      "price": 13.34,
+      "rating": 5
+    },
+    {
+      "price": 46.29,
+      "rating": 1
+    },
+    {
+      "price": 15.08,
+      "rating": 4
+    },
+    {
+      "price": 31.45,
+      "rating": 3
+    },
+    {
+      "price": 54.04,
+      "rating": 1
+    },
+    {
+      "price": 29.14,
+      "rating": 5
+    },
+    {
+      "price": 18.46,
+      "rating": 3
+    },
+    {
+      "price": 48.77,
+      "rating": 1
+    },
+    {
+      "price": 46.29,
+      "rating": 5
+    },
+    {
+      "price": 43.62,
+      "rating": 5
+    },
+    {
+      "price": 22.08,
+      "rating": 2
+    },
+    {
+      "price": 44.91,
+      "rating": 2
+    },
+    {
+      "price": 13.33,
+      "rating": 3
+    },
+    {
+      "price": 14.16,
+      "rating": 1
+    },
+    {
+      "price": 10.01,
+      "rating": 4
+    },
+    {
+      "price": 53.64,
+      "rating": 5
+    },
+    {
+      "price": 59.15,
+      "rating": 4
+    },
+    {
+      "price": 25.06,
+      "rating": 2
+    },
+    {
+      "price": 15.85,
+      "rating": 3
+    },
+    {
+      "price": 55.91,
+      "rating": 1
+    },
+    {
+      "price": 17.93,
+      "rating": 3
+    },
+    {
+      "price": 44.28,
+      "rating": 1
+    },
+    {
+      "price": 29.93,
+      "rating": 5
+    },
+    {
+      "price": 35.92,
+      "rating": 2
+    },
+    {
+      "price": 43.64,
+      "rating": 1
+    },
+    {
+      "price": 58.87,
+      "rating": 4
+    },
+    {
+      "price": 24.72,
+      "rating": 2
+    },
+    {
+      "price": 21.72,
+      "rating": 4
+    },
+    {
+      "price": 50.62,
+      "rating": 5
+    },
+    {
+      "price": 58.55,
+      "rating": 4
+    },
+    {
+      "price": 12.29,
+      "rating": 5
+    },
+    {
+      "price": 38.38,
+      "rating": 2
+    },
+    {
+      "price": 55.91,
+      "rating": 4
+    },
+    {
+      "price": 28.25,
+      "rating": 2
+    },
+    {
+      "price": 47.31,
+      "rating": 4
+    },
+    {
+      "price": 41.93,
+      "rating": 2
+    },
+    {
+      "price": 36.94,
+      "rating": 2
+    },
+    {
+      "price": 51.15,
+      "rating": 1
+    },
+    {
+      "price": 25.38,
+      "rating": 2
+    },
+    {
+      "price": 38.73,
+      "rating": 1
+    },
+    {
+      "price": 37.19,
+      "rating": 3
+    },
+    {
+      "price": 36.58,
+      "rating": 1
+    },
+    {
+      "price": 50.4,
+      "rating": 3
+    },
+    {
+      "price": 44.1,
+      "rating": 4
+    },
+    {
+      "price": 10.23,
+      "rating": 5
+    },
+    {
+      "price": 42.27,
+      "rating": 1
+    },
+    {
+      "price": 54.62,
+      "rating": 1
+    },
+    {
+      "price": 35.67,
+      "rating": 3
+    },
+    {
+      "price": 56.37,
+      "rating": 5
+    },
+    {
+      "price": 11.45,
+      "rating": 3
+    },
+    {
+      "price": 21.14,
+      "rating": 1
+    },
+    {
+      "price": 59.64,
+      "rating": 1
+    },
+    {
+      "price": 13.66,
+      "rating": 2
+    },
+    {
+      "price": 51.75,
+      "rating": 5
+    },
+    {
+      "price": 58.64,
+      "rating": 4
+    },
+    {
+      "price": 38.7,
+      "rating": 2
+    },
+    {
+      "price": 51.77,
+      "rating": 3
+    },
+    {
+      "price": 11.21,
+      "rating": 5
+    },
+    {
+      "price": 32.74,
+      "rating": 2
+    },
+    {
+      "price": 55.02,
+      "rating": 3
+    },
+    {
+      "price": 20.79,
+      "rating": 5
+    },
+    {
+      "price": 19.57,
+      "rating": 1
+    },
+    {
+      "price": 21.96,
+      "rating": 4
+    },
+    {
+      "price": 45.14,
+      "rating": 1
+    },
+    {
+      "price": 43.55,
+      "rating": 5
+    },
+    {
+      "price": 28.13,
+      "rating": 4
+    },
+    {
+      "price": 21.0,
+      "rating": 3
+    },
+    {
+      "price": 48.27,
+      "rating": 5
+    },
+    {
+      "price": 37.34,
+      "rating": 1
+    },
+    {
+      "price": 41.32,
+      "rating": 5
+    },
+    {
+      "price": 33.37,
+      "rating": 2
+    },
+    {
+      "price": 14.76,
+      "rating": 3
+    },
+    {
+      "price": 10.76,
+      "rating": 1
+    },
+    {
+      "price": 10.56,
+      "rating": 3
+    },
+    {
+      "price": 12.86,
+      "rating": 4
+    },
+    {
+      "price": 49.05,
+      "rating": 3
+    },
+    {
+      "price": 46.91,
+      "rating": 4
+    },
+    {
+      "price": 41.6,
+      "rating": 3
+    },
+    {
+      "price": 28.82,
+      "rating": 1
+    },
+    {
+      "price": 28.03,
+      "rating": 1
+    },
+    {
+      "price": 20.29,
+      "rating": 4
+    },
+    {
+      "price": 10.65,
+      "rating": 1
+    },
+    {
+      "price": 11.82,
+      "rating": 2
+    },
+    {
+      "price": 32.97,
+      "rating": 4
+    },
+    {
+      "price": 58.08,
+      "rating": 4
+    },
+    {
+      "price": 43.02,
+      "rating": 3
+    },
+    {
+      "price": 27.55,
+      "rating": 3
+    },
+    {
+      "price": 40.3,
+      "rating": 5
+    },
+    {
+      "price": 25.83,
+      "rating": 2
+    },
+    {
+      "price": 53.53,
+      "rating": 5
+    },
+    {
+      "price": 39.01,
+      "rating": 4
+    },
+    {
+      "price": 15.28,
+      "rating": 5
+    },
+    {
+      "price": 23.99,
+      "rating": 2
+    },
+    {
+      "price": 30.0,
+      "rating": 1
+    },
+    {
+      "price": 33.14,
+      "rating": 1
+    },
+    {
+      "price": 36.94,
+      "rating": 1
+    },
+    {
+      "price": 33.34,
+      "rating": 4
+    },
+    {
+      "price": 47.8,
+      "rating": 3
+    },
+    {
+      "price": 40.45,
+      "rating": 2
+    },
+    {
+      "price": 41.83,
+      "rating": 4
+    },
+    {
+      "price": 57.82,
+      "rating": 5
+    },
+    {
+      "price": 26.13,
+      "rating": 2
+    },
+    {
+      "price": 37.4,
+      "rating": 5
+    },
+    {
+      "price": 43.54,
+      "rating": 2
+    },
+    {
+      "price": 43.55,
+      "rating": 1
+    },
+    {
+      "price": 27.88,
+      "rating": 5
+    },
+    {
+      "price": 38.2,
+      "rating": 4
+    },
+    {
+      "price": 29.64,
+      "rating": 3
+    },
+    {
+      "price": 41.14,
+      "rating": 4
+    },
+    {
+      "price": 35.07,
+      "rating": 3
+    },
+    {
+      "price": 29.82,
+      "rating": 1
+    },
+    {
+      "price": 36.74,
+      "rating": 3
+    },
+    {
+      "price": 19.15,
+      "rating": 2
+    },
+    {
+      "price": 26.41,
+      "rating": 2
+    },
+    {
+      "price": 18.13,
+      "rating": 1
+    },
+    {
+      "price": 21.96,
+      "rating": 1
+    },
+    {
+      "price": 30.57,
+      "rating": 2
+    },
+    {
+      "price": 56.13,
+      "rating": 1
+    },
+    {
+      "price": 40.85,
+      "rating": 1
+    },
+    {
+      "price": 56.63,
+      "rating": 3
+    },
+    {
+      "price": 44.29,
+      "rating": 1
+    },
+    {
+      "price": 16.97,
+      "rating": 5
+    },
+    {
+      "price": 34.53,
+      "rating": 5
+    },
+    {
+      "price": 29.48,
+      "rating": 3
+    },
+    {
+      "price": 25.77,
+      "rating": 1
+    },
+    {
+      "price": 37.05,
+      "rating": 5
+    },
+    {
+      "price": 31.49,
+      "rating": 4
+    },
+    {
+      "price": 21.8,
+      "rating": 1
+    },
+    {
+      "price": 50.59,
+      "rating": 3
+    },
+    {
+      "price": 34.2,
+      "rating": 2
+    },
+    {
+      "price": 16.28,
+      "rating": 1
+    },
+    {
+      "price": 16.62,
+      "rating": 3
+    },
+    {
+      "price": 52.87,
+      "rating": 3
+    },
+    {
+      "price": 34.56,
+      "rating": 3
+    },
+    {
+      "price": 30.6,
+      "rating": 4
+    },
+    {
+      "price": 44.74,
+      "rating": 4
+    },
+    {
+      "price": 25.02,
+      "rating": 1
+    },
+    {
+      "price": 23.21,
+      "rating": 3
+    },
+    {
+      "price": 48.94,
+      "rating": 2
+    },
+    {
+      "price": 37.52,
+      "rating": 2
+    },
+    {
+      "price": 34.41,
+      "rating": 2
+    },
+    {
+      "price": 39.36,
+      "rating": 2
+    },
+    {
+      "price": 51.33,
+      "rating": 2
+    },
+    {
+      "price": 15.77,
+      "rating": 1
+    },
+    {
+      "price": 28.41,
+      "rating": 1
+    },
+    {
+      "price": 49.98,
+      "rating": 4
+    },
+    {
+      "price": 25.08,
+      "rating": 1
+    },
+    {
+      "price": 11.88,
+      "rating": 3
+    },
+    {
+      "price": 36.28,
+      "rating": 2
+    },
+    {
+      "price": 54.11,
+      "rating": 3
+    },
+    {
+      "price": 10.0,
+      "rating": 5
+    },
+    {
+      "price": 23.57,
+      "rating": 3
+    },
+    {
+      "price": 38.85,
+      "rating": 5
+    },
+    {
+      "price": 26.2,
+      "rating": 1
+    },
+    {
+      "price": 11.53,
+      "rating": 2
+    },
+    {
+      "price": 28.93,
+      "rating": 1
+    },
+    {
+      "price": 21.95,
+      "rating": 2
+    },
+    {
+      "price": 17.46,
+      "rating": 5
+    },
+    {
+      "price": 16.85,
+      "rating": 2
+    },
+    {
+      "price": 48.05,
+      "rating": 2
+    },
+    {
+      "price": 35.01,
+      "rating": 2
+    },
+    {
+      "price": 23.63,
+      "rating": 4
+    },
+    {
+      "price": 12.96,
+      "rating": 5
+    },
+    {
+      "price": 56.59,
+      "rating": 4
+    },
+    {
+      "price": 24.89,
+      "rating": 3
+    },
+    {
+      "price": 16.81,
+      "rating": 4
+    },
+    {
+      "price": 57.84,
+      "rating": 5
+    },
+    {
+      "price": 48.67,
+      "rating": 2
+    },
+    {
+      "price": 32.35,
+      "rating": 3
+    },
+    {
+      "price": 14.19,
+      "rating": 4
+    },
+    {
+      "price": 12.75,
+      "rating": 4
+    },
+    {
+      "price": 31.63,
+      "rating": 4
+    },
+    {
+      "price": 14.64,
+      "rating": 1
+    },
+    {
+      "price": 27.41,
+      "rating": 2
+    },
+    {
+      "price": 59.45,
+      "rating": 1
+    },
+    {
+      "price": 10.93,
+      "rating": 2
+    },
+    {
+      "price": 52.26,
+      "rating": 2
+    },
+    {
+      "price": 20.75,
+      "rating": 1
+    },
+    {
+      "price": 54.29,
+      "rating": 5
+    },
+    {
+      "price": 28.07,
+      "rating": 4
+    },
+    {
+      "price": 54.65,
+      "rating": 4
+    },
+    {
+      "price": 21.59,
+      "rating": 5
+    },
+    {
+      "price": 39.58,
+      "rating": 2
+    },
+    {
+      "price": 36.72,
+      "rating": 4
+    },
+    {
+      "price": 56.0,
+      "rating": 5
+    },
+    {
+      "price": 55.66,
+      "rating": 2
+    },
+    {
+      "price": 48.39,
+      "rating": 2
+    },
+    {
+      "price": 33.97,
+      "rating": 1
+    },
+    {
+      "price": 17.08,
+      "rating": 4
+    },
+    {
+      "price": 48.48,
+      "rating": 3
+    },
+    {
+      "price": 13.22,
+      "rating": 4
+    },
+    {
+      "price": 38.89,
+      "rating": 5
+    },
+    {
+      "price": 51.34,
+      "rating": 4
+    },
+    {
+      "price": 14.02,
+      "rating": 4
+    },
+    {
+      "price": 36.26,
+      "rating": 2
+    },
+    {
+      "price": 14.86,
+      "rating": 2
+    },
+    {
+      "price": 48.8,
+      "rating": 3
+    },
+    {
+      "price": 41.24,
+      "rating": 1
+    },
+    {
+      "price": 54.12,
+      "rating": 3
+    },
+    {
+      "price": 27.89,
+      "rating": 5
+    },
+    {
+      "price": 41.81,
+      "rating": 1
+    },
+    {
+      "price": 24.73,
+      "rating": 3
+    },
+    {
+      "price": 16.28,
+      "rating": 2
+    },
+    {
+      "price": 45.61,
+      "rating": 3
+    },
+    {
+      "price": 20.66,
+      "rating": 4
+    },
+    {
+      "price": 48.74,
+      "rating": 1
+    },
+    {
+      "price": 45.13,
+      "rating": 3
+    },
+    {
+      "price": 23.11,
+      "rating": 5
+    },
+    {
+      "price": 47.61,
+      "rating": 5
+    },
+    {
+      "price": 46.23,
+      "rating": 2
+    },
+    {
+      "price": 26.12,
+      "rating": 2
+    },
+    {
+      "price": 25.55,
+      "rating": 1
+    },
+    {
+      "price": 38.02,
+      "rating": 2
+    },
+    {
+      "price": 47.22,
+      "rating": 1
+    },
+    {
+      "price": 57.35,
+      "rating": 5
+    },
+    {
+      "price": 57.36,
+      "rating": 5
+    },
+    {
+      "price": 12.34,
+      "rating": 4
+    },
+    {
+      "price": 41.05,
+      "rating": 1
+    },
+    {
+      "price": 35.79,
+      "rating": 2
+    },
+    {
+      "price": 14.75,
+      "rating": 5
+    },
+    {
+      "price": 49.31,
+      "rating": 1
+    },
+    {
+      "price": 30.48,
+      "rating": 4
+    }
+  ],
+  "availability": [
+    {
+      "name": "在售",
+      "value": 1000
+    },
+    {
+      "name": "缺货",
+      "value": 0
+    }
+  ]
+}

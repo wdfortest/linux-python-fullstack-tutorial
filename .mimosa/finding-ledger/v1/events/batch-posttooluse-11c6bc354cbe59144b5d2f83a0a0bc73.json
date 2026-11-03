@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "mimosa-finding-ledger-batch/v1",
+  "batchId": "posttooluse-11c6bc354cbe59144b5d2f83a0a0bc73",
+  "runId": null,
+  "runStatus": "completed",
+  "coverage": {
+    "status": "complete",
+    "reasons": []
+  },
+  "source": {
+    "component": "zcode-hook",
+    "operationId": "PostToolUse"
+  },
+  "revision": null,
+  "diffHash": null,
+  "rulesVersion": null,
+  "sessionHash": "f9a3864152fc4f9254d150dbcf1bec3da3887c6f07658604995819033d66f28a",
+  "reportRef": null,
+  "events": [
+    {
+      "eventId": "hook-d0be2e4f30ade43792491f37d017cdfb",
+      "findingId": "mimosa-7836e5da8a3b250f16ab3278",
+      "type": "static_fix_verified",
+      "at": "2026-11-03T16:51:23.376Z",
+      "identity": {
+        "projectRelativeFile": "projects/book-insight/api/queries.py",
+        "ruleId": "security",
+        "codeEvidenceHash": "d258a9795c7313cd6000b5ef5dce6c37f85563f4a411453532d2409ce8909df2",
+        "confidence": "stable"
+      },
+      "scope": "direct",
+      "line": 56,
+      "endLine": 56,
+      "reasonCode": "static_rescan_passed",
+      "reportedToAgent": false,
+      "evidence": {
+        "kind": "static_scan",
+        "boundary": "observed",
+        "producer": "deterministic",
+        "evidenceHash": "d258a9795c7313cd6000b5ef5dce6c37f85563f4a411453532d2409ce8909df2"
+      },
+      "sequence": 0
+    },
+    {
+      "eventId": "hook-fe9cd7742bc4182aff5d83ce3680a5b1",
+      "findingId": "mimosa-dc859941e5c40ef2e9864db7",
+      "type": "static_fix_verified",
+      "at": "2026-11-03T16:51:23.376Z",
+      "identity": {
+        "projectRelativeFile": "projects/book-insight/api/queries.py",
+        "ruleId": "security",
+        "codeEvidenceHash": "537b0136f645c8760b9b73b4ad3b5e8515d89371a7dc8c4ca5356424aaca9858",
+        "confidence": "stable"
+      },
+      "scope": "direct",
+      "line": 30,
+      "endLine": 30,
+      "reasonCode": "static_rescan_passed",
+      "reportedToAgent": false,
+      "evidence": {
+        "kind": "static_scan",
+        "boundary": "observed",
+        "producer": "deterministic",
+        "evidenceHash": "537b0136f645c8760b9b73b4ad3b5e8515d89371a7dc8c4ca5356424aaca9858"
+      },
+      "sequence": 1
+    },
+    {
+      "eventId": "hook-79e26636eaa3e7dfcd8c132d24bbc0f5",
+      "findingId": "mimosa-1d091d8b803c1121288d4f0b",
+      "type": "static_fix_verified",
+      "at": "2026-11-03T16:51:23.376Z",
+      "identity": {
+        "projectRelativeFile": "projects/book-insight/api/queries.py",
+        "ruleId": "security",
+        "codeEvidenceHash": "e8b56c76e5f93125611a2a6835ae622f4fa3b7332cd22c74dc7a2aa005d32268",
+        "confidence": "stable"
+      },
+      "scope": "direct",
+      "line": 63,
+      "endLine": 63,
+      "reasonCode": "static_rescan_passed",
+      "reportedToAgent": false,
+      "evidence": {
+        "kind": "static_scan",
+        "boundary": "observed",
+        "producer": "deterministic",
+        "evidenceHash": "e8b56c76e5f93125611a2a6835ae622f4fa3b7332cd22c74dc7a2aa005d32268"
+      },
+      "sequence": 2
+    }
+  ],
+  "observedFindingIds": [],
+  "verifiedFiles": [],
+  "recordedAt": "2026-11-03T16:51:23.586Z"
+}

@@ -1,0 +1,71 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ===== 虚拟环境 =====
+venv/
+.venv/
+env/
+ENV/
+
+# ===== Jupyter =====
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ===== 测试与覆盖率 =====
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ===== 日志与运行时 =====
+*.log
+logs/
+*.pid
+
+# ===== 环境变量（绝不提交密钥！）=====
+.env
+.env.*
+!.env.example
+
+# ===== 数据文件约定：原始数据不入库，示例数据入库 =====
+# 爬虫产生的原始数据目录（体积大、可再生）
+projects/*/data/raw/
+*.db-shm
+*.db-wal
+# 但保留 book-insight 的示例 SQLite 库（小于 2MB）供开箱即用
+!projects/book-insight/data/*.db
+
+# ===== Scrapy =====
+.scrapy/
+
+# ===== IDE / 编辑器 =====
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ===== 系统杂项 =====
+*.bak
+*.tmp
+node_modules/

@@ -1,0 +1,166 @@
+"""book-insight FastAPI 后端。
+
+启动：cd projects/book-insight && uvicorn api.main:app --reload
+文档：http://127.0.0.1:8000/docs
+
+分层说明：本文件只做「请求解析 -> 业务过滤/组装 -> 响应」，
+所有 SQL 集中在 queries.py（全部为静态字面量，见该文件的安全说明）。
+本数据集仅 1000 行且只读，筛选在 Python 侧完成最直观；
+生产环境的数据库侧参数化过滤写法见教程 docs/06-fastapi-backend/。
+"""
+from __future__ import annotations
+
+import statistics
+
+from fastapi import Depends, FastAPI, HTTPException, Query
+from fastapi.middleware.cors import CORSMiddleware
+
+from .database import get_db
+from . import queries
+from .schemas import (
+    BookDetail,
+    BookPage,
+    ChartsAll,
+    CategoryStat,
+    NamedValue,
+    PriceBucket,
+    RatingItem,
+    Summary,
+    TopBook,
+)
+
+app = FastAPI(
+    title="Book Insight API",
+    description="图书数据洞察平台：爬虫采集 -> SQLite -> pandas 分析 -> FastAPI -> ECharts",
+    version="1.0.0",
+)
+
+# 前后端同源部署时可收紧为具体域名；开发阶段放行本地常用端口
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://127.0.0.1:8000", "http://localhost:8000",
+        "http://127.0.0.1:8060", "http://localhost:8060",
+        "http://127.0.0.1:5500", "http://localhost:5500",
+    ],
+    allow_methods=["GET"],
+    allow_headers=["*"],
+)
+
+
+@app.get("/api/health")
+def health() -> dict:
+    return {"status": "ok"}
+
+
+def _keep(book: dict, category: str | None, min_rating: int | None, keyword: str | None) -> bool:
+    """列表过滤条件（Python 侧）。"""
+    if category is not None and book["category"] != category:
+        return False
+    if min_rating is not None and (book["rating"] or 0) < min_rating:
+        return False
+    if keyword is not None and keyword not in (book["title"] or "").casefold():
+        return False
+    return True
+
+
+@app.get("/api/books", response_model=BookPage)
+def list_books(
+    limit: int = Query(20, ge=1, le=100),
+    offset: int = Query(0, ge=0),
+    category: str | None = None,
+    min_rating: int | None = Query(None, ge=1, le=5),
+    search: str | None = Query(None, max_length=80),
+    db: Depends = Depends(get_db),
+) -> BookPage:
+    """图书列表：分类/评分/标题搜索过滤 + 分页（按 id 升序）。"""
+    keyword = search.casefold() if search is not None else None
+    books = [dict(r) for r in queries.load_books(db)]
+    kept = [b for b in books if _keep(b, category, min_rating, keyword)]
+    return BookPage(total=len(kept), limit=limit, offset=offset, items=kept[offset : offset + limit])
+
+
+@app.get("/api/books/{book_id}", response_model=BookDetail)
+def get_book(book_id: int, db: Depends = Depends(get_db)) -> BookDetail:
+    books = queries.load_books(db)
+    detail = next((dict(r) for r in books if r["id"] == book_id), None)
+    if detail is None:
+        raise HTTPException(status_code=404, detail="book not found")
+    return BookDetail.model_validate(detail)
+
+
+def _summary(db) -> Summary:
+    row = queries.summary_row(db)
+    prices = [float(p) for (p,) in queries.price_rows(db) if p is not None]
+    total = int(row["total_books"])
+    in_stock = int(row["in_stock"] or 0)
+    return Summary(
+        total_books=total,
+        categories=int(row["categories"]),
+        avg_price=round(float(row["avg_price"] or 0), 2),
+        median_price=round(statistics.median(prices), 2) if prices else 0.0,
+        max_price=round(float(row["max_price"] or 0), 2),
+        min_price=round(float(row["min_price"] or 0), 2),
+        avg_rating=round(float(row["avg_rating"] or 0), 2),
+        in_stock=in_stock,
+        out_of_stock=total - in_stock,
+        total_reviews=int(row["total_reviews"]),
+        avg_stock=round(float(row["avg_stock"] or 0), 1),
+    )
+
+
+@app.get("/api/stats/summary", response_model=Summary)
+def stats_summary(db: Depends = Depends(get_db)) -> Summary:
+    return _summary(db)
+
+
+@app.get("/api/stats/ratings", response_model=list[RatingItem])
+def stats_ratings(db: Depends = Depends(get_db)) -> list[RatingItem]:
+    return [RatingItem(rating=int(r), count=int(c)) for r, c in queries.ratings_rows(db)]
+
+
+@app.get("/api/stats/prices", response_model=list[PriceBucket])
+def stats_prices(db: Depends = Depends(get_db)) -> list[PriceBucket]:
+    """价格直方图：SQL 取价格列，Python 侧按 10 英镑分桶。"""
+    counts: dict[str, int] = {}
+    for (price,) in queries.price_rows(db):
+        if price is None:
+            continue
+        low = min(int(price // 10) * 10, 60)
+        label = "60+" if low >= 60 else "%d-%d" % (low, low + 10)
+        counts[label] = counts.get(label, 0) + 1
+    order = ["0-10", "10-20", "20-30", "30-40", "40-50", "50-60", "60+"]
+    return [PriceBucket(bucket=b, count=counts.get(b, 0)) for b in order]
+
+
+@app.get("/api/stats/categories", response_model=list[CategoryStat])
+def stats_categories(db: Depends = Depends(get_db)) -> list[CategoryStat]:
+    return [
+        CategoryStat(
+            category=c, count=int(n), avg_price=round(float(p or 0), 2),
+            avg_rating=round(float(r or 0), 2), total_stock=int(s),
+        )
+        for c, n, p, r, s in queries.categories_rows(db)
+    ]
+
+
+@app.get("/api/stats/top-rated", response_model=list[TopBook])
+def stats_top_rated(db: Depends = Depends(get_db)) -> list[TopBook]:
+    return [TopBook(title=t, price=p, rating=r, category=c) for t, p, r, c in queries.top_rated_rows(db)]
+
+
+@app.get("/api/charts/all", response_model=ChartsAll)
+def charts_all(db: Depends = Depends(get_db)) -> ChartsAll:
+    """大屏聚合接口：一次请求返回全部图表数据，减少前端请求数。"""
+    all_points = [(float(p), int(r)) for p, r in queries.scatter_rows(db) if p is not None]
+    scatter = [{"price": round(p, 2), "rating": r} for p, r in all_points[::2]]
+    avail = [NamedValue(name="在售" if flag == 1 else "缺货", value=int(c)) for flag, c in queries.availability_rows(db)]
+    return ChartsAll(
+        summary=_summary(db),
+        rating_distribution=stats_ratings(db),
+        price_histogram=stats_prices(db),
+        categories=stats_categories(db),
+        top_rated=stats_top_rated(db),
+        price_rating_scatter=scatter,
+        availability=avail,
+    )

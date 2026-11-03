@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Insight · 图书数据洞察大屏</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- ECharts 6.1.0：jsdelivr / unpkg / 国内 npmmirror 三选一 -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@6.1.0/dist/echarts.min.js"></script>
+  <script>
+    // CDN 兜底：jsdelivr 不可达时切换 npmmirror
+    if (typeof echarts === "undefined") {
+      document.write('<script src="https://registry.npmmirror.com/echarts/6.1.0/files/dist/echarts.min.js"><\/script>');
+    }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>Book Insight</h1>
+      <span class="subtitle">图书数据洞察大屏 · 爬虫采集 → pandas 分析 → FastAPI → ECharts</span>
+    </div>
+    <div class="meta">
+      <span id="refresh-time">数据加载中…</span>
+      <button id="refresh-btn" type="button">刷新数据</button>
+    </div>
+  </header>
+
+  <section id="kpi-row" class="kpi-row">
+    <!-- KPI 卡片由 main.js 依据 summary 数据生成 -->
+  </section>
+
+  <div id="err-box"></div>
+
+  <main class="grid">
+    <div class="panel" style="grid-area: rating"><h2>评分分布</h2><div id="chart-rating" class="chart"></div></div>
+    <div class="panel" style="grid-area: price"><h2>价格分布（英镑）</h2><div id="chart-price" class="chart"></div></div>
+    <div class="panel" style="grid-area: category"><h2>分类书目 TOP10</h2><div id="chart-category" class="chart"></div></div>
+    <div class="panel" style="grid-area: catprice"><h2>分类均价 TOP10</h2><div id="chart-catprice" class="chart"></div></div>
+    <div class="panel" style="grid-area: scatter"><h2>价格 × 评分关系（抽样 500 点）</h2><div id="chart-scatter" class="chart"></div></div>
+    <div class="panel" style="grid-area: avail"><h2>在售状态</h2><div id="chart-avail" class="chart"></div></div>
+    <div class="panel" style="grid-area: toplist"><h2>评分最高图书 TOP10</h2><div id="top-table" class="table-wrap"></div></div>
+  </main>
+
+  <footer class="footnote">
+    数据来源：books.toscrape.com（Scrapy 官方爬虫练习站，明确欢迎抓取）·
+    共 1000 本图书 · 本大屏由 FastAPI <code>/api/charts/all</code> 提供数据
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

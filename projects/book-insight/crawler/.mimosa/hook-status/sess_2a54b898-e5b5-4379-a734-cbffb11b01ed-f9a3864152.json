@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "mimosa-hook-status/v1",
+  "recordedAt": "2026-11-03T16:30:47.090Z",
+  "sessionId": "sess_2a54b898-e5b5-4379-a734-cbffb11b01ed",
+  "event": "PostToolUse",
+  "toolName": "Write",
+  "file": "/Users/jjy/Documents/linux学习与实战/projects/book-insight/analysis/analyze.py",
+  "outcome": "inconclusive",
+  "coverage": "partial",
+  "findingCount": 0,
+  "durationMs": 2,
+  "hostState": "hook_complete",
+  "reportHint": ".mimosa/reports/"
+}

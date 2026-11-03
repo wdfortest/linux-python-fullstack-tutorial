@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "mimosa-hook-status/v1",
+  "recordedAt": "2026-11-03T17:04:46.416Z",
+  "sessionId": "sess_2a54b898-e5b5-4379-a734-cbffb11b01ed",
+  "event": "PostToolUse",
+  "toolName": "Write",
+  "file": "/Users/jjy/Documents/linux学习与实战/docs/00-如何使用本教程.md",
+  "outcome": "clear",
+  "coverage": "complete",
+  "findingCount": 0,
+  "durationMs": 2,
+  "hostState": "hook_complete",
+  "reportHint": ".mimosa/reports/"
+}

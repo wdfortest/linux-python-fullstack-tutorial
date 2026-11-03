@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "mimosa-finding-ledger-batch/v1",
+  "batchId": "posttooluse-39fac27d746cb5b0c9b9fe8fea532661",
+  "runId": null,
+  "runStatus": "completed",
+  "coverage": {
+    "status": "complete",
+    "reasons": []
+  },
+  "source": {
+    "component": "zcode-hook",
+    "operationId": "PostToolUse"
+  },
+  "revision": null,
+  "diffHash": null,
+  "rulesVersion": null,
+  "sessionHash": "f9a3864152fc4f9254d150dbcf1bec3da3887c6f07658604995819033d66f28a",
+  "reportRef": null,
+  "events": [
+    {
+      "eventId": "hook-42fad05cbcb81ed3ba2209ef317c0dc5",
+      "findingId": "mimosa-9cdb78bfae1129429aa7f66e",
+      "type": "static_fix_verified",
+      "at": "2026-11-03T17:09:09.265Z",
+      "identity": {
+        "projectRelativeFile": "projects/crawler-lab/01_fetch_robots.py",
+        "ruleId": "security",
+        "codeEvidenceHash": "dd065632ae2a55d9a4ee4fcb47ecd825c97782fd38497d8ceef845f4c0c90392",
+        "confidence": "stable"
+      },
+      "scope": "direct",
+      "line": 25,
+      "endLine": 25,
+      "reasonCode": "static_rescan_passed",
+      "reportedToAgent": false,
+      "evidence": {
+        "kind": "static_scan",
+        "boundary": "observed",
+        "producer": "deterministic",
+        "evidenceHash": "dd065632ae2a55d9a4ee4fcb47ecd825c97782fd38497d8ceef845f4c0c90392"
+      },
+      "sequence": 0
+    }
+  ],
+  "observedFindingIds": [],
+  "verifiedFiles": [],
+  "recordedAt": "2026-11-03T17:09:09.473Z"
+}

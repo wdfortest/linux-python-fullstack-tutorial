@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "mimosa-finding-ledger-batch/v1",
+  "batchId": "pretooluse-b456a6f921032f500c8a4ee1bd383812",
+  "runId": null,
+  "runStatus": "completed",
+  "coverage": {
+    "status": "complete",
+    "reasons": []
+  },
+  "source": {
+    "component": "zcode-hook",
+    "operationId": "PreToolUse"
+  },
+  "revision": null,
+  "diffHash": null,
+  "rulesVersion": null,
+  "sessionHash": "f9a3864152fc4f9254d150dbcf1bec3da3887c6f07658604995819033d66f28a",
+  "reportRef": null,
+  "events": [
+    {
+      "eventId": "hook-fdc8c545cdd1fcb41c230d064deee83e",
+      "findingId": "mimosa-9cdb78bfae1129429aa7f66e",
+      "type": "finding_blocked",
+      "at": "2026-11-03T17:08:13.825Z",
+      "identity": {
+        "projectRelativeFile": "projects/crawler-lab/01_fetch_robots.py",
+        "ruleId": "security",
+        "codeEvidenceHash": "dd065632ae2a55d9a4ee4fcb47ecd825c97782fd38497d8ceef845f4c0c90392",
+        "confidence": "stable"
+      },
+      "scope": "direct",
+      "line": 25,
+      "endLine": 25,
+      "reasonCode": "deny",
+      "reportedToAgent": true,
+      "evidence": {
+        "kind": "source",
+        "boundary": "candidate",
+        "producer": "deterministic",
+        "evidenceHash": "dd065632ae2a55d9a4ee4fcb47ecd825c97782fd38497d8ceef845f4c0c90392"
+      },
+      "sequence": 0
+    }
+  ],
+  "observedFindingIds": [],
+  "verifiedFiles": [],
+  "recordedAt": "2026-11-03T17:08:14.033Z"
+}

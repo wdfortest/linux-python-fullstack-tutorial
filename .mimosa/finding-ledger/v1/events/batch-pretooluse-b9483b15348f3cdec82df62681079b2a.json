@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "mimosa-finding-ledger-batch/v1",
+  "batchId": "pretooluse-b9483b15348f3cdec82df62681079b2a",
+  "runId": null,
+  "runStatus": "completed",
+  "coverage": {
+    "status": "complete",
+    "reasons": []
+  },
+  "source": {
+    "component": "zcode-hook",
+    "operationId": "PreToolUse"
+  },
+  "revision": null,
+  "diffHash": null,
+  "rulesVersion": null,
+  "sessionHash": "f9a3864152fc4f9254d150dbcf1bec3da3887c6f07658604995819033d66f28a",
+  "reportRef": null,
+  "events": [
+    {
+      "eventId": "hook-04399fb406f6bdd9fa3b7dd9076d7225",
+      "findingId": "mimosa-afedcc3c7ab7bd45d28c3798",
+      "type": "finding_blocked",
+      "at": "2026-11-03T15:55:29.967Z",
+      "identity": {
+        "projectRelativeFile": "projects/book-insight/crawler/crawl_books.py",
+        "ruleId": "security",
+        "codeEvidenceHash": "03bbfcf670c715bb5ec4d5e3cd9db3de69c023ca7182552e26606170df9fdf9f",
+        "confidence": "stable"
+      },
+      "scope": "direct",
+      "line": 206,
+      "endLine": 206,
+      "reasonCode": "deny",
+      "reportedToAgent": true,
+      "evidence": {
+        "kind": "source",
+        "boundary": "candidate",
+        "producer": "deterministic",
+        "evidenceHash": "03bbfcf670c715bb5ec4d5e3cd9db3de69c023ca7182552e26606170df9fdf9f"
+      },
+      "sequence": 0
+    }
+  ],
+  "observedFindingIds": [],
+  "verifiedFiles": [],
+  "recordedAt": "2026-11-03T15:55:30.204Z"
+}
