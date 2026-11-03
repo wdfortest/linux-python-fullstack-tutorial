@@ -69,3 +69,6 @@ Thumbs.db
 *.bak
 *.tmp
 node_modules/
+
+# ===== 安全工具本地数据（不入库）=====
+.mimosa/

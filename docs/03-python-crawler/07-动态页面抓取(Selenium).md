@@ -199,6 +199,26 @@ soup = BeautifulSoup(driver.page_source, "lxml")
 quotes = soup.select("div.quote span.text")   # 第 3 章技能原样复用
 ```
 
+### 7.7.3 Cookie 与会话管理
+
+driver 会话内自动维持 Cookie（第 1 章 1.3.4 的原理），必要时可以读取与注入：
+
+```python
+driver.get_cookies()                      # 当前全部 Cookie
+driver.add_cookie({"name": "k", "value": "v"})  # 注入前必须已在该域名的页面上
+```
+
+典型用法：登录一次后把 Cookie 存下来，下次启动直接注入跳过登录流程（注意有效期与敏感性——登录态 Cookie 等同账号凭证，按第 8 章 .env 的密钥纪律保管，绝不写进代码或仓库）。
+
+### 7.7.4 截图：调试自动化的第一现场
+
+```python
+driver.save_screenshot("data/debug.png")     # 全页当前视口
+element.screenshot("data/element.png")       # 单元素
+```
+
+无头模式下看不到页面，截图就是你的「眼睛」：元素定位不到、点击没反应时，先截一张图看浏览器里实际是什么样子——多数「灵异问题」在截图里一眼现形（弹窗遮挡、移动端布局、图片没加载完）。
+
 ## 7.8 requests 与 Selenium 的取舍
 
 | 维度 | requests | Selenium |
@@ -222,6 +242,7 @@ quotes = soup.select("div.quote span.text")   # 第 3 章技能原样复用
 | `ElementNotInteractableException` | 元素在 DOM 里但不可见/不可点 | 等待用 `element_to_be_clickable`；或先滚动到元素 |
 | 点击后页面没变化（lab 演示 2 实测遇到） | 无头模式事件被吞/落点偏移 | 7.6 节三层兜底：滚动 → 重试 → JS 点击 |
 | `element.click()` 报 `stale element reference` | 页面刷新后旧元素引用失效 | 重新定位再操作；循环里每次迭代重新 find |
+| 任务跑几小时后越来越慢/崩掉 | driver 长会话累积内存、弹窗与僵尸标签页 | 分批任务每批新开 driver 并 quit；处理 `driver.window_handles` 清理多余标签页 |
 | 无头模式下布局/元素位置不对 | 默认窗口太小触发移动端布局 | `--window-size=1440,900` 固定窗口 |
 | Chrome 进程残留吃内存 | 只关窗口没退出 driver | `finally: driver.quit()`；用 `with webdriver` 上下文写法更保险 |
 | 页面是英文但数据乱码 | 渲染前编码正常，取属性时得到转义实体 | 交给 BeautifulSoup/lxml 处理实体（第 3 章）；或确认页面 charset |
