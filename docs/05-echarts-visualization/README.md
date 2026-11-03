@@ -30,4 +30,4 @@ python -m http.server 8060
 
 所有页面均内置 CDN 兜底（jsdelivr 不可达自动切 npmmirror）。
 
-← 返回 [总目录](../README.md)
+← 返回 [总目录](../../README.md)

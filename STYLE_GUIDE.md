@@ -109,7 +109,7 @@ flowchart LR
 
 ## 6. 链接与交叉引用
 
-- 章节间链接一律用**仓库内相对路径**：`[Scrapy 完全指南](../03-python-crawler/05-Scrapy框架完全指南.md)`。
+- 章节间链接一律用**仓库内相对路径**：`[Scrapy 完全指南](docs/03-python-crawler/05-Scrapy框架完全指南.md)`。
 - 每篇文档开头「配套代码」和结尾「延伸阅读」都要有链接。
 - 外部链接只用官方文档（docs.python.org、fastapi.tiangolo.com、echarts.apache.org 等）或权威资料。
 

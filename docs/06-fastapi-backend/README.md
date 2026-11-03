@@ -30,4 +30,4 @@ cd projects/fastapi-lab/01_minimal && uvicorn main:app --port 8100   # 依此类
 cd 03_database && python -m pytest ../05_tests/test_db_app.py -v    # 3 passed
 ```
 
-← 返回 [总目录](../README.md)
+← 返回 [总目录](../../README.md)
