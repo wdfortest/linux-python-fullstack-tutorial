@@ -36,14 +36,14 @@
    - 长文件 Write 易产生乱码损坏——尽量精简代码文件、写完立即 py_compile 验证
 3. 后台爬虫数据源只允许 quotes.toscrape.com / books.toscrape.com（delay ≥0.3s）
 
-## 当前进度（2026-11-04 01:13 更新）
+## 当前进度（2026-11-04 02:05 更新）
 
-- GitHub 仓库已创建并推送：**https://github.com/wdfortest/linux-python-fullstack-tutorial**（public，2 个 commit 已在线）
-- .mimosa 本地数据已从 git 移除并 gitignore
-- 根 README CI 徽章已换真实 workflow 状态徽章
-- docs/03 爬虫章节 8 篇文档已全部落盘（Agent 在做最后的 scrapy 实测收尾，01:09 仍有活动）
-- docs/03/README.md 索引已写
-- 首次 commit 0a7e1b5 + chore d6a9455 已推送
+- GitHub 仓库在线：**https://github.com/wdfortest/linux-python-fullstack-tutorial**（8 个 commit 已推送）
+- 全部章节已完成：01 Git(8) / 02 Ubuntu(10) / 03 爬虫(8) / 05 ECharts(5, 亲写) / 06 FastAPI(6, 亲写) / 07 实战(6, 亲写) / docs/00 + 根 README + 各章索引
+- 05 ECharts lab 页面浏览器实测（6 类图 + 10 万点 48ms）；06 FastAPI 全部 6 个 lab 实测（curl/pytest/JWT 解码）
+- 全仓库死链预检通过（仅剩 docs/04 两个前向引用，等 Agent 完成即闭合）
+- **唯一未完成：04 数据分析章节**（Agent 运行中：7 个 lab + 7 张图已完成，文档 3/7 篇已写）
+- Agent 完成后：审校 docs/04 → 写第 4 章索引 → 死链终检 → 最终 push → GitHub 渲染验证 → 汇报
 
 
 

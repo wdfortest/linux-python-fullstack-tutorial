@@ -97,7 +97,7 @@ def main() -> None:
     show(cur, "SELECT DISTINCT b.category FROM books b LEFT JOIN category_notes c ON b.category = c.category WHERE c.category IS NULL ORDER BY b.category LIMIT 5")
     print("\n[RIGHT JOIN] 以右表为主（Archival 只有备注没有书）:")
     show(cur, "SELECT c.category, c.shelf, COUNT(b.id) AS book_cnt FROM category_notes c RIGHT JOIN books b ON b.category = c.category GROUP BY c.category, c.shelf HAVING c.category IS NOT NULL")
-    print("\n[CROSS JOIN] 笛卡尔积：3 个分类 x 3 条备注 = 9 行（截取 6 行）:")
+    print("\n[CROSS JOIN] 笛卡尔积：39 个 5 星分类 x 5 条备注 = 195 行（截取 6 行）:")
     cur.execute("SELECT b.category, c.shelf FROM books b CROSS JOIN category_notes c WHERE b.rating = 5 LIMIT 6")
     for row in cur.fetchall():
         print("  ", row)
