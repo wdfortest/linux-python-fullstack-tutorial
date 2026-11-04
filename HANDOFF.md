@@ -1,8 +1,8 @@
 # HANDOFF · 项目完成记录（2026-11-04 02:00 收官）
 
 > 本文件是教程项目的「施工日志 + 交接说明」。**项目已全部完成并发布**：
-> **https://github.com/wdfortest/linux-python-fullstack-tutorial**（CI 5/5 全绿）
-> 本地仓库：/Users/jjy/Documents/linux学习与实战（6 个 commit，全部已推送）
+> **https://github.com/wdfortest/linux-python-fullstack-tutorial**（CI 全绿）
+> 本地仓库：/Users/jjy/Documents/linux学习与实战（7 个 commit，全部已推送；2026-11-04 复核验收，见文末验收记录）
 
 ## 任务定义（用户原始需求）
 
@@ -68,20 +68,14 @@
 - docs/01、docs/02 的 README.md 目录索引
 - git-lab/ 练习目录（Agent 产出）
 
-### 进行中 🔄
+### 验收记录（2026-11-04 复核，全部通过）
 
-- **爬虫章节 Agent（唯一活跃）**：正在补写 docs/03-python-crawler/ 8 篇文档（lab 代码 crawler-lab/ 大部分已写好，含 scrapy 项目）；已见到 02/03/04/05/06/07 文档存在
-- 等它完成后，按队列依次启动（一次一个）：04 数据分析章节 Agent → 05 ECharts 章节 Agent → 06 FastAPI 章节 Agent
-
-### 待办 ⏳
-
-1. 等爬虫 Agent 完成通知 → 审校其 8 篇文档（结构/Mermaid/链接）→ 启动数据分析章节 Agent（原 prompt 已备好：7 篇文档 + data-analysis-lab/ + 真实数据在 projects/book-insight/data/books.db）
-2. 然后 ECharts 章节 Agent（5 篇 + echarts-lab/，CDN 用 npmmirror/jsdelivr）
-3. 然后 FastAPI 章节 Agent（6 篇 + fastapi-lab/，版本 pinned）
-4. 每个章节完成后写该目录的 README.md 索引（模板见 docs/01、docs/02 的 README）
-5. 全部完成后：全仓库死链检查（重点：docs/07 引用的 ../03-fastapi-backend/、../04-data-analysis/ 文件是否都已存在）→ 各章 README 补全 → 最终 commit → `gh repo create wdfortest/linux-python-fullstack-tutorial --public --source=. --push`（描述见下）→ 浏览器验证 GitHub 渲染（Mermaid/目录/图片）→ 汇报
-   - 建议仓库描述："Linux(Ubuntu) + Git/GitHub + Python 爬虫 + pandas/SQL + ECharts + FastAPI 全栈中文教程（含可复现实战项目 book-insight）"
-6. 汇报给用户（ waking up 后能看到：完整教程 + 已推送的 GitHub 仓库 + 实测结果汇总）
+- 文档盘点：docs/ 共 57 个 markdown（55 篇正文 + 章节索引），00–07 各章齐全
+- 死链复查：全仓库 222 个相对链接，修复 2 个真死链（docs/07 引用的 `../03-fastapi-backend/` 应为 `../06-fastapi-backend/`）；文件名含配平括号的链接为 CommonMark 合法写法，GitHub 正常渲染，非死链
+- 代码验证：projects 全部 .py 通过 py_compile；book-insight pytest 14/14 通过
+- 数据一致性：data/stats.json 与 README 宣称一致（1000 本 / 50 分类 / £35.07 / 2.92★ / 在售 1000）
+- 仓库卫生：清除了被误跟踪的 projects/book-insight/.mimosa 与 crawler/.mimosa 共 26 个本地工具状态文件（gitignore 规则 `.mimosa/` 匹配任意层级，之后不会再被跟踪）
+- CI：GitHub Actions 5/5 全绿；本地与 origin/main 同步
 
 ## 关键决策记录
 
